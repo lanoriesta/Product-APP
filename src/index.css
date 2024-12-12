@@ -150,6 +150,11 @@
     @apply text-white text-[1.3rem] font-thin tracking-wider;
   }
 
+  /** ADD TO CART BTN */
+  .product-info-con .btn-con button {
+    @apply bg-black text-white px-5 py-2;
+  }
+
   /** LOADERS  */
   .loader-con {
     @apply rounded-sm p-5 mb-2;
