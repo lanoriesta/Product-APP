@@ -12,7 +12,7 @@
 
   /** NAVIGATION */
   .nav-con {
-    @apply px-5 py-4 flex items-center justify-between;
+    @apply px-5 py-4 flex items-center justify-between lg:w-[1000px] container;
   }
 
   .cart-icon-con {
@@ -24,12 +24,12 @@
   }
 
   .body-con {
-    @apply px-5 py-4;
+    @apply px-5 py-4 container lg:w-[1000px];
   }
 
   /** PRODUCTS COMPONENT  */
   .products-con {
-    @apply grid grid-cols-2 gap-3;
+    @apply grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4;
   }
 
   /** PRODUCT COMPONENT  */
@@ -79,15 +79,19 @@
   /** PRODUCT INFO COMPONENT */
 
   .product-info-con {
-    @apply w-full py-10 flex flex-col gap-5;
+    @apply w-full py-10 flex flex-col gap-5 md:grid md:grid-cols-2 md:h-[200px];
   }
 
   .product-info-con .img-info-con {
-    @apply w-full h-[200px];
+    @apply w-full h-[200px] md:h-[400px];
   }
 
   .product-info-con .img-info-con > img {
-    @apply w-full h-full object-contain;
+    @apply w-full h-full object-contain  md:p-10;
+  }
+
+  .product-info-con .product-info {
+    @apply md:flex md:justify-center md:flex-col;
   }
 
   .product-info-con .product-info > p:nth-child(4) {
@@ -134,6 +138,11 @@
     @apply p-1 col-span-3 h-full;
   }
 
+  /** TRASH ICON BTN */
+  .cart-con .cart-item-con div:nth-child(1) .trash-btn-con > button {
+    @apply bg-black px-3 py-1 font-light text-white tracking-widest text-[.8rem] my-1;
+  }
+
   .cart-con .cart-item-con div:nth-child(2) {
     @apply p-1 col-span-1 h-[80px] w-full;
   }
@@ -147,10 +156,14 @@
   }
 
   .cart-con .amount-con p {
-    @apply text-white text-[1.3rem] font-thin tracking-wider;
+    @apply text-white text-[1.3rem] font-thin tracking-wider container lg:w-[1000px];
   }
 
   /** ADD TO CART BTN */
+  .product-info-con .btn-con {
+    @apply py-5;
+  }
+
   .product-info-con .btn-con button {
     @apply bg-black text-white px-5 py-2;
   }

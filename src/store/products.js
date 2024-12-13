@@ -42,6 +42,15 @@ const useProductStore = create((set) => ({
       console.log(error);
     }
   },
+  removeFromCart: (id) => {
+    try {
+      set((state) => ({
+        cart: state.cart.filter((item) => item.id !== id),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  },
 }));
 
 export default useProductStore;

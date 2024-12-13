@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import useProductStore from "../store/products";
 import { Link } from "react-router";
+import { Trash2Icon } from "lucide-react";
 
 const Cart = () => {
-  const { cart } = useProductStore();
+  const { cart, removeFromCart } = useProductStore();
   const array = ["ball", "boy", "apple", "apple", "ball"];
   const arrayNum = [1, 2, 3, 4, 5];
 
@@ -54,6 +55,12 @@ const Cart = () => {
                 </span>{" "}
                 ${handleProductPrice(cart, item.id)}
               </p>
+              <div className="trash-btn-con">
+                <button onClick={() => removeFromCart(item.id)}>
+                  {/* // <Trash2Icon color="white" strokeWidth={1} size={30} /> */}
+                  remove
+                </button>
+              </div>
             </div>
             <div>
               <img src={item.image} alt={item.title} />

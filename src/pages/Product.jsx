@@ -43,11 +43,11 @@ const Product = () => {
             <h2>{product.title}</h2>
             <p>{product.category}</p>
             <p>{product.description}</p>
-          </div>
-          <div className="btn-con">
-            <button onClick={() => handleAddToCart(product)}>
-              Add to cart
-            </button>
+            <div className="btn-con">
+              <button onClick={() => handleAddToCart(product)}>
+                Add to cart
+              </button>
+            </div>
           </div>
         </div>
       )}
