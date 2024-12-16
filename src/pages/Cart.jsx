@@ -41,7 +41,7 @@ const Cart = () => {
       {!cart || cart.length === 0 ? (
         <div className="empty-cart-con">
           <h3>Cart is empty</h3>
-          <Link>Shop Now</Link>
+          <Link to="/">Shop Now</Link>
         </div>
       ) : (
         fliteredItem.map((item, index) => (
@@ -55,15 +55,15 @@ const Cart = () => {
                 </span>{" "}
                 ${handleProductPrice(cart, item.id)}
               </p>
-              <div className="trash-btn-con">
-                <button onClick={() => removeFromCart(item.id)}>
-                  {/* // <Trash2Icon color="white" strokeWidth={1} size={30} /> */}
-                  remove
-                </button>
-              </div>
             </div>
             <div>
               <img src={item.image} alt={item.title} />
+            </div>
+
+            <div className="trash-btn-con">
+              <button onClick={() => removeFromCart(item.id)}>
+                <Trash2Icon strokeWidth={1} size={30} />
+              </button>
             </div>
           </div>
         ))
