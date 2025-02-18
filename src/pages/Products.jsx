@@ -1,22 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useProductStore from "../store/products";
 import ProductCard from "../components/ProductCard";
+import FilterItems from "../components/FilterItems";
 
 const Products = () => {
   const { getProducts, products, loaders } = useProductStore();
+  const [filterData, setFilterData] = useState("All");
 
   useEffect(() => {
     getProducts();
   }, [getProducts]);
 
+  const handleFilterChange = (data) => {
+    setFilterData(data);
+  };
+
+  // console.log(filterData);
+
   return (
     <>
+      <FilterItems onFilterChange={handleFilterChange} />
       <div className="products-con">
-        {products.map((product, index) => (
-          <div key={index}>
-            <ProductCard product={product} loaders={loaders} />
-          </div>
-        ))}
+        {products.map((product, index) => {
+          if (product.category === filterData || filterData === "All") {
+            return (
+              <div key={index}>
+                <ProductCard product={product} loaders={loaders} />
+              </div>
+            );
+          }
+        })}
       </div>
     </>
   );
