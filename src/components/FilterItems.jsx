@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const FilterItems = ({ onFilterChange }) => {
   const [buttonClicked, setButtonClicked] = useState("All");
-  const onFilterChangeCat = (test, value) => {
-    onFilterChange(test);
+  const onFilterChangeCat = (category, value) => {
+    onFilterChange(category);
 
     handleButtonClicked(value);
   };

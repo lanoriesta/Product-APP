@@ -15,8 +15,6 @@ const Products = () => {
     setFilterData(data);
   };
 
-  // console.log(filterData);
-
   return (
     <>
       <FilterItems onFilterChange={handleFilterChange} />
