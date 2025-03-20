@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <>
-      <div className="bg-white dark:bg-black container pb-10 relative h-full">
+      <div className="bg-white dark:bg-black container pb-10">
         <Navigation />
         <div className="body-con">
           <Routes>
