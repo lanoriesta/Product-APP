@@ -18,6 +18,10 @@ function App() {
           </Routes>
         </div>
         <ToastContainer />
+        <hr className="my-5" />
+        <p className="text-center  pb-3 text-black/40">
+          © 2024 All rights reserved.
+        </p>
       </div>
     </>
   );
