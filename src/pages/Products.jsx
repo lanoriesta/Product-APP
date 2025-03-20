@@ -18,7 +18,7 @@ const Products = () => {
   return (
     <>
       <FilterItems onFilterChange={handleFilterChange} />
-      <div className="products-con">
+      <div className="products-con w-[100vh]">
         {products.map((product, index) => {
           if (product.category === filterData || filterData === "All") {
             return (
